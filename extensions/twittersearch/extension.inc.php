@@ -42,7 +42,7 @@ class Lifestream_TwitterSearchFeed extends Lifestream_Feed
 	
 	function get_public_url()
 	{
-		return $this->get_user_url($this->options['username']);
+		return $this->get_url();
 	}
 
 	function parse_users($text)
@@ -80,7 +80,7 @@ class Lifestream_TwitterSearchFeed extends Lifestream_Feed
 	
 	function render_item($row, $item)
 	{
-		return "{$item['user']} <em>&raquo;</em> " . $item['description'] . " <span style='font-size: 80%'>[<a href='{$item['link']}'>link</a>]</span>"; // $this->parse_search_term($this->parse_users($this->parse_urls(htmlspecialchars($item['description'])))) . ' ['.$this->lifestream->get_anchor_html(htmlspecialchars($this->options['username']), $item['link']).']';
+		return "{$item['user']} <em>&raquo;</em> " . $item['description'] . " <span style='font-size: 80%'>[<a href='{$item['link']}'>link</a>]</span>";
 	}
 	
 	function yield($row, $url, $key)
